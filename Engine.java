@@ -43,6 +43,7 @@ public class Engine {
         } catch (Exception e) {
             System.err.println(e.getMessage()); // Out of fuel
         }
+        Car myCar = new Car(2);
     }
 }
 
