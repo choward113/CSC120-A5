@@ -7,7 +7,7 @@ public class Engine {
     public Engine(FuelType fueltype, double fuelCapacity){
         this.fueltype = fueltype;
         this.fuelCapacity = fuelCapacity;
-        this.currentFuel = currentFuel;
+        this.currentFuel = fuelCapacity;
 
     }
 
@@ -20,33 +20,29 @@ public class Engine {
     }
 
     public void refuel(){
+        System.out.println("Refueled! Fuel level: "+ this.fuelCapacity);
         this.currentFuel =  this.fuelCapacity;
     }
 
 
     public void go(){
         if (this.currentFuel > 0) {
-            System.out.println(this.currentFuel);
            this.currentFuel = this.currentFuel - 20;
         } else {
             throw new RuntimeException("Not enough fuel. Fuel level is: "+ this.currentFuel);
         }
-        System.out.println("Remaining fuel level: "+ this.currentFuel);
+        System.out.println("Going! Remaining fuel: "+ this.currentFuel);
     }
 
     public static void main(String[] args) {
         Engine myEngine = new Engine(FuelType.ELECTRIC, 100.0);
-        System.out.println("Fuel: "+  myEngine.getCurrentFuel());
         try {
             while (true) {
-                System.out.println("Fuel: "+  myEngine.getCurrentFuel());
                 myEngine.go();
             }
         } catch (Exception e) {
             System.err.println(e.getMessage()); // Out of fuel
         }
-        myEngine.refuel();
-        System.out.println("Fuel: "+  myEngine.getCurrentFuel());
     }
 }
 
