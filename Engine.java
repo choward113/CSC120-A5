@@ -10,6 +10,9 @@ public class Engine {
         this.currentFuel = fuelCapacity;
 
     }
+    public String toString(){
+        return "This train's engine is "+this.fueltype+". Current fuel: "+this.currentFuel+" of "+this.fuelCapacity;
+    }
 
     public double getFuelCapacity(){
         return this.fuelCapacity;
@@ -34,17 +37,7 @@ public class Engine {
         System.out.println("Going! Remaining fuel: "+ this.currentFuel);
     }
 
-    public static void main(String[] args) {
-        Engine myEngine = new Engine(FuelType.ELECTRIC, 100.0);
-        try {
-            while (true) {
-                myEngine.go();
-            }
-        } catch (Exception e) {
-            System.err.println(e.getMessage()); // Out of fuel
-        }
-        Car myCar = new Car(2);
-    }
+    
 }
 
 /*a private `FuelType` attribute to indicate what type of fuel it uses, and `

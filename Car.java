@@ -10,6 +10,10 @@ public class Car {
         this.passengerList = new ArrayList<Passenger>(maximumCapacity);
     }
 
+    public String toString(){
+        return " has "+ passengerList.size() +" of "+this.maximumCapacity +" seats filled.";
+    }
+
     public int getCapacity(){
         return this.maximumCapacity;
     }
@@ -22,7 +26,7 @@ public class Car {
         if (isAboard(p)){
             throw new RuntimeException("Passenger already on train");
         } else if (seatsRemaining() < 0){
-            throw new RuntimeException("Not enough seats");
+            throw new RuntimeException("Car is full");
         }
         this.passengerList.add(p);
         //System.out.println("Added "+ name + "to the car. "+ seatsRemaining + "seats left");   
@@ -44,7 +48,7 @@ public class Car {
             System.out.println("This car is EMPTY");
         } else {
             for (int i = 0; i < passengerList.size(); i++){
-                System.out.println(passengerList.get(i));
+                System.out.println(passengerList.get(i).getName());
             }
         }
     }
