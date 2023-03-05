@@ -46,7 +46,7 @@ Listed below are various aspects of the assignment.  When you turn in your work,
 
 **PART** 2 pt: Complies with style guidelines (missing items 1 pt each):
 
-      _____ Classes & class members all have Javadoc header comments
+      **YES** Classes & class members all have Javadoc header comments
 
       **YES** Clear and consistent indentation of bracketed sections
 
